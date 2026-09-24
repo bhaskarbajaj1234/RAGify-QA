@@ -1,129 +1,93 @@
-# Question-Answering-System-using-RAG
+# RAGify-QA
 
-By [<b>Hema Kalyan Murapaka</b>](https://hemakalyan.netlify.app)
+Developed by **Bhaskar Vikas Bajaj**
 
-Connect with me on social media and explore my work:
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/hemakalyan)
-[![GitHub](https://img.shields.io/badge/GitHub-Follow-181717?style=flat-square&logo=github)](https://github.com/KalyanM45)
-[![Medium](https://img.shields.io/badge/Medium-Follow-03a57a?style=flat-square&logo=medium)](https://medium.com/@kalyan45)
-[![Twitter](https://img.shields.io/twitter/follow/KalyanM45?style=social)](https://x.com/mhemakalyan)
-[![Sponsor Hema Kalyan Murapaka](https://img.shields.io/badge/Sponsor-Hema_Kalyan-28a745?style=flat-square&logo=github-sponsors)](https://github.com/sponsors/KalyanM45)
-
-**Special Thanks to GitHub Sponsors**
+---
 
 ## About The Project
 
+**RAGify-QA** is an AI-powered Document Question Answering System designed to streamline information retrieval from vast document collections. Built on advanced natural language processing (NLP) techniques, the application provides a user-friendly interface powered by Streamlit.
 
-The Document Question Answering System is a sophisticated tool designed to streamline information retrieval from vast document collections. Built on a foundation of advanced natural language processing techniques, the system features a user-friendly interface powered by Streamlit. Leveraging the LangChain framework and Google Generative AI, it ingests documents, converts them into vector embeddings, and employs the Retrieval augmentation generation(RAG) architecture for accurate question answering. Users can input queries through the intuitive interface, with the system retrieving precise answers based on the document context. With its efficiency, accuracy, and scalability, the system finds applications in research, knowledge management, education, and customer support, representing a significant advancement in information access technology.
+Leveraging the **LangChain** framework, **Google Generative AI**, and **Groq**, the system ingests documents, converts them into vector embeddings, and employs a Retrieval-Augmented Generation (RAG) architecture for highly accurate contextual question answering.
+
+### Key Features
+- **Context-Aware QA**: Answers user queries based strictly on the provided document context.
+- **Fast Vector Search**: Utilizes FAISS for fast and scalable similarity search.
+- **LLM Integration**: Powered by Google Gemini and Groq models for fast, high-quality responses.
+- **Interactive UI**: Clean, responsive interface built with Streamlit.
+
+---
 
 ## Library Requirements
 
- - faiss-cpu
- - langchain-groq
- - PyPDF2
- - langchain_google_genai
- - langchain
- - streamlit
- - python-dotenv
+- faiss-cpu
+- langchain-groq
+- PyPDF2
+- langchain_google_genai
+- langchain
+- streamlit
+- python-dotenv
+
+---
 
 ## Getting Started
 
-This will help you understand how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+Follow these steps to set up and run the project locally on your machine.
 
-## Installation Steps
+### Prerequisites
 
-### Option 1: Installation from GitHub
+Ensure you have Python installed on your system (Python 3.9 or higher recommended).
 
-Follow these steps to install and set up the project directly from the GitHub repository:
+### Installation Steps
 
 1. **Clone the Repository**
-   - Open your terminal or command prompt.
-   - Navigate to the directory where you want to install the project.
-   - Run the following command to clone the GitHub repository:
-     ```
-     git clone https://github.com/KalyanMurapaka45/Question-Answering-System-using-RAG.git
-     ```
+   git clone https://github.com/bhaskarbajaj1234/RAGify-QA.git
+   cd RAGify-QA
 
-2. **Create a Virtual Environment** (Optional but recommended)
-   - It's a good practice to create a virtual environment to manage project dependencies. Run the following command:
-     ```
-     conda create -p <Environment_Name> python==<python version> -y
-     ```
+2. **Create a Virtual Environment** (Recommended)
+   - Using venv:
+     python -m venv venv
+     source venv/bin/activate  # On macOS/Linux
+     venv\Scripts\activate     # On Windows
+   - Or using conda:
+     conda create -n ragify-qa python=3.10 -y
+     conda activate ragify-qa
 
-3. **Activate the Virtual Environment** (Optional)
-   - Activate the virtual environment based on your operating system:
-       ```
-       conda activate <Environment_Name>/
-       ```
+3. **Install Dependencies**
+   pip install -r requirements.txt
 
-4. **Install Dependencies**
-   - Navigate to the project directory:
-     ```
-     cd [project_directory]
-     ```
-   - Run the following command to install project dependencies:
-     ```
-     pip install -r requirements.txt
-     ```
+4. **Set Up Environment Variables**
+   Create a .env file in the root directory of the project and add your API keys:
+   GROQ_API_KEY=your_groq_api_key_here
+   GOOGLE_API_KEY=your_google_api_key_here
 
-5. **Run the Project**
-   - Start the project by running the appropriate command.
-     ```
-     streamlit run app.py
-     ```
+5. **Run the Application**
+   streamlit run app.py
 
-6. **Access the Project**
-   - Open a web browser or the appropriate client to access the project.
+6. **Access the Web App**
+   Open your browser and navigate to http://localhost:8501
 
-
-## API Key Setup
-
-To use this project, you need an API key from Google Gemini Large Language Model and Groq. Follow these steps to obtain and set up your API key:
-
-1. **Get API Key:**
-   - Visit the Provided Links [Groq API](https://console.groq.com/keys) and [Google API](https://aistudio.google.com/app/apikey).
-   - Follow the instructions to create an account and obtain your API key.
-
-2. **Set Up API Key:**
-   - Create a file named `.env` in the project root.
-   - Add your API key to the `.env` file:
-     ```dotenv
-     API_KEY=your_api_key_here
-     ```
-
-   **Note:** Keep your API key confidential. Do not share it publicly or expose it in your code.<br>
-
+---
 
 ## Contributing
 
-Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-• **Report bugs**: If you encounter any bugs, please let us know. Open up an issue and let us know the problem.
-
-• **Contribute code**: If you are a developer and want to contribute, follow the instructions below to get started!
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
 
 1. Fork the Project
-2. Create your Feature Branch
-3. Commit your Changes
-4. Push to the Branch
+2. Create your Feature Branch (git checkout -b feature/AmazingFeature)
+3. Commit your Changes (git commit -m 'Add some AmazingFeature')
+4. Push to the Branch (git push origin feature/AmazingFeature)
 5. Open a Pull Request
 
-• **Suggestions**: If you don't want to code but have some awesome ideas, open up an issue explaining some updates or improvements you would like to see!
-
-#### Don't forget to give the project a star! Thanks again!
+---
 
 ## License
 
-This project is licensed under the [Open Source Initiative (OSI)](https://opensource.org/) approved GNU General Public License v3.0 License - see the [LICENSE.txt](LICENSE.txt) file for details.<br>
+This project is open-source and available under the GNU General Public License v3.0.
 
+---
 
-## Contact Details
+## Author
 
-Hema Kalyan Murapaka - [kalyanmurapaka274@gmail.com](kalyanmurapaka274@gmail.com)<br>
-
-
-## Acknowledgements
-
-We'd like to extend our gratitude to all individuals and organizations who have played a role in the development and success of this project. Your support, whether through contributions, inspiration, or encouragement, has been invaluable. Thank you for being a part of our journey.
+**Bhaskar Vikas Bajaj**
+- GitHub: https://github.com/bhaskarbajaj1234
